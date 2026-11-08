@@ -14,7 +14,20 @@ public static class Program
     {
         // Kurulum/guncelleme sirasinda Velopack'in kendi islerini yapmasi icin
         // bu satir uygulamanin EN BASINDA olmali.
-        VelopackApp.Build().Run();
+        VelopackApp.Build()
+            // Kurulum sihirbazi masaustu kisayolunu kendisi olusturur (istege bagli);
+            // uygulama kaldirilirken o kisayol da silinsin.
+            .OnBeforeUninstallFastCallback(_ =>
+            {
+                try
+                {
+                    string lnk = System.IO.Path.Combine(
+                        Environment.GetFolderPath(Environment.SpecialFolder.DesktopDirectory), "Runa Voice.lnk");
+                    if (System.IO.File.Exists(lnk)) System.IO.File.Delete(lnk);
+                }
+                catch { }
+            })
+            .Run();
 
         ComWrappersSupport.InitializeComWrappers();
         Application.Start(p =>
