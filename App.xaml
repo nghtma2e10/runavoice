@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Application
+    x:Class="RunaVoice_WinUI.App"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    RequestedTheme="Dark">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
+            </ResourceDictionary.MergedDictionaries>
+
+            <!-- Runa Mor Vurgu Renk Paleti -->
+            <Color x:Key="SystemAccentColor">#8B5CF6</Color>
+            <Color x:Key="SystemAccentColorLight1">#A855F7</Color>
+            <Color x:Key="SystemAccentColorLight2">#C084FC</Color>
+            <Color x:Key="SystemAccentColorDark1">#7C3AED</Color>
+            <Color x:Key="SystemAccentColorDark2">#6D28D9</Color>
+
+            <SolidColorBrush x:Key="TextControlBorderBrushFocused" Color="#8B5CF6" />
+            <SolidColorBrush x:Key="TextControlElevationBorderBrush" Color="Transparent" />
+            <SolidColorBrush x:Key="TextControlElevationBorderFocusedBrush" Color="Transparent" />
+            <SolidColorBrush x:Key="TextControlBackgroundFocused" Color="#10FFFFFF" />
+            <SolidColorBrush x:Key="TextControlBackgroundPointerOver" Color="#0EFFFFFF" />
+            <SolidColorBrush x:Key="SliderTrackValueFill" Color="#8B5CF6" />
+            <SolidColorBrush x:Key="SliderTrackValueFillPointerOver" Color="#A855F7" />
+            <SolidColorBrush x:Key="SliderTrackValueFillPressed" Color="#C084FC" />
+            <SolidColorBrush x:Key="SliderThumbBackground" Color="#F8FAFC" />
+            <SolidColorBrush x:Key="SliderThumbBackgroundPointerOver" Color="#C084FC" />
+            <SolidColorBrush x:Key="ToggleSwitchFillOn" Color="#8B5CF6" />
+            <SolidColorBrush x:Key="ToggleSwitchFillOnPointerOver" Color="#A855F7" />
+
+            <!-- Kusursuz Ortalamalı ve Gri Parlama Yapmayan Özel Runa Buton Şablonu -->
+            <Style x:Key="RunaCleanButtonStyle" TargetType="Button">
+                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="BorderThickness" Value="0" />
+                <Setter Property="MinWidth" Value="0" />
+                <Setter Property="MinHeight" Value="0" />
+                <Setter Property="UseSystemFocusVisuals" Value="False" />
+                <Setter Property="Template">
+                    <Setter.Value>
+                        <ControlTemplate TargetType="Button">
+                            <Border x:Name="RootBorder"
+                                    Background="{TemplateBinding Background}"
+                                    BorderBrush="{TemplateBinding BorderBrush}"
+                                    BorderThickness="{TemplateBinding BorderThickness}"
+                                    CornerRadius="{TemplateBinding CornerRadius}"
+                                    Padding="{TemplateBinding Padding}">
+                                <VisualStateManager.VisualStateGroups>
+                                    <VisualStateGroup x:Name="CommonStates">
+                                        <VisualState x:Name="Normal" />
+                                        <VisualState x:Name="PointerOver">
+                                            <VisualState.Setters>
+                                                <Setter Target="RootBorder.Opacity" Value="0.96" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Pressed">
+                                            <VisualState.Setters>
+                                                <Setter Target="RootBorder.Opacity" Value="0.86" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                        <VisualState x:Name="Disabled">
+                                            <VisualState.Setters>
+                                                <Setter Target="RootBorder.Opacity" Value="0.45" />
+                                            </VisualState.Setters>
+                                        </VisualState>
+                                    </VisualStateGroup>
+                                </VisualStateManager.VisualStateGroups>
+                                <ContentPresenter x:Name="ContentPresenter"
+                                                  Content="{TemplateBinding Content}"
+                                                  ContentTemplate="{TemplateBinding ContentTemplate}"
+                                                  Foreground="{TemplateBinding Foreground}"
+                                                  FontFamily="{TemplateBinding FontFamily}"
+                                                  FontSize="{TemplateBinding FontSize}"
+                                                  FontWeight="{TemplateBinding FontWeight}"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                            </Border>
+                        </ControlTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Style>
+
+            <!-- Modern Runa Modal Metin Kutusu Şablonu (Dikey Tam Ortalamalı, Alt Çizgisiz) -->
+            <Style x:Key="RunaModalTextBoxStyle" TargetType="TextBox">
+                <Setter Property="Background" Value="#0AFFFFFF" />
+                <Setter Property="Foreground" Value="#FFFFFF" />
+                <Setter Property="BorderBrush" Value="#1FFFFFFF" />
+                <Setter Property="BorderThickness" Value="1" />
+                <Setter Property="CornerRadius" Value="10" />
+                <Setter Property="Height" Value="42" />
+                <Setter Property="MinHeight" Value="42" />
+                <Setter Property="Padding" Value="14,9,14,9" />
+                <Setter Property="FontSize" Value="13.5" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+            </Style>
+
+            <!-- Şeffaf ListView Seçim/Hover Efektleri -->
+            <Style x:Key="CleanListViewItemStyle" TargetType="ListViewItem">
+                <Setter Property="Padding" Value="0" />
+                <Setter Property="Margin" Value="0,2,0,2" />
+                <Setter Property="MinHeight" Value="0" />
+                <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+                <Setter Property="VerticalContentAlignment" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>

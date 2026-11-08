@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "RunaVoice.WinUI (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "RunaVoice.WinUI (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}

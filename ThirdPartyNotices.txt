@@ -1,0 +1,37 @@
+THIRD-PARTY SOFTWARE NOTICES AND INFORMATION
+============================================================
+
+This project incorporates components from the open-source projects listed below:
+
+1. webrtc-rs (v0.12.0)
+   License: MIT / Apache-2.0
+   Repository: https://github.com/webrtc-rs/webrtc
+
+2. nnnoiseless (v0.5.2)
+   License: BSD-3-Clause
+   Repository: https://github.com/brave/nnnoiseless
+
+3. libopus / opus1 (v0.3.0)
+   License: BSD-3-Clause
+   Repository: https://gitlab.xiph.org/xiph/opus
+
+4. tokio (v1.54.1)
+   License: MIT
+   Repository: https://github.com/tokio-rs/tokio
+
+5. rubato (v5.0.1)
+   License: MIT
+   Repository: https://github.com/HEnquist/rubato
+
+6. rtrb (v0.4.1)
+   License: MIT / Apache-2.0
+   Repository: https://github.com/m-ou-se/rtrb
+
+7. windows-rs (v0.59.0)
+   License: MIT / Apache-2.0
+   Repository: https://github.com/microsoft/windows-rs
+
+8. Sunshine & Moonlight Game Streaming
+   Sunshine: GPLv3 (https://app.lizardbyte.dev/Sunshine)
+   Moonlight: GPLv3 (https://moonlight-stream.org)
+   Note: Sunshine and Moonlight operate as independent external processes at arm's length.

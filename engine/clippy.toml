@@ -1,0 +1,5 @@
+disallowed-methods = [
+    { path = "tokio::spawn", reason = "acik runtime handle kullan (handle.spawn)" },
+    { path = "tokio::task::spawn", reason = "acik runtime handle kullan (handle.spawn)" },
+    { path = "tokio::task::spawn_blocking", reason = "acik runtime handle kullan (handle.spawn_blocking)" },
+]

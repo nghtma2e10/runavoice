@@ -1,0 +1,12 @@
+[package]
+name = "runa-telemetry"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+tracing = { version = "=0.1.44" }
+tracing-subscriber = { version = "=0.3.23", features = ["env-filter", "fmt", "time"] }
+tracing-appender = { version = "=0.2.5" }
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = { version = "=1.0.154" }

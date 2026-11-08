@@ -1,0 +1,17 @@
+[package]
+name = "runa-net"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+tracing = { version = "=0.1.44" }
+thiserror = { version = "=2.0.21" }
+serde = { version = "=1.0.229", features = ["derive"] }
+serde_json = { version = "=1.0.154" }
+tokio = { version = "=1.54.1", features = ["full"] }
+bytes = { version = "=1.12.1" }
+parking_lot = { version = "=0.12.3" }
+webrtc = { version = "=0.12.0" }
+opus1 = { version = "=0.3.0" }
+runa-audio = { path = "../runa-audio" }
